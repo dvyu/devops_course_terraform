@@ -13,6 +13,8 @@ EOF
 ) > /credentials
 
 # run checks
+echo cat /key.pub
+cat /key.pub
 cd $WORKDIR
 terraform init
 terraform plan
