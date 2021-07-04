@@ -4,4 +4,5 @@
 set -e
 
 cd $WORKDIR
+terraform init
 terraform plan
