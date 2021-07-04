@@ -16,3 +16,7 @@ EOF
 cd $WORKDIR
 terraform init
 terraform plan
+# apply
+if [ "$APPLY" = "true" ];then
+  terraform apply
+fi
