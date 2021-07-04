@@ -13,12 +13,12 @@ EOF
 ) > /credentials
 
 # run checks
-echo cat /key.pub
-cat /key.pub
 cd $WORKDIR
 terraform init
 terraform plan
 # apply
 if [ "$APPLY" = "true" ];then
+  echo "$SSH_PUBLIC_KEY" | base64 -d > key.pub
+  cat key.pub
   terraform apply -auto-approve
 fi
