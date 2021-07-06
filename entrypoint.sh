@@ -21,6 +21,7 @@ if [ "$APPLY" = "true" ];then
   echo "$SSH_PUBLIC_KEY" | base64 -d > key.pub
   cat key.pub
   terraform apply -auto-approve
+  cat terraform.tfstate
   terraform output -json instance_ip_addr | jq -r '.[0]' > instance_ip_addr
   cat instance_ip_addr
   terraform output -json instance_ips | jq -r '.[0]' > instance_ips
